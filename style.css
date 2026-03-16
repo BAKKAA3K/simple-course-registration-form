@@ -1,0 +1,222 @@
+/* ===== Reset & Base ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #d6d6d6;
+  color: #333;
+  line-height: 1.6;
+  padding: 2rem 1rem;
+}
+
+/* ===== Form Container ===== */
+.form-container {
+  max-width: 780px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 2.5rem 2.5rem;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.75rem;
+  color: #1a1a2e;
+}
+
+/* ===== Fieldset & Legend ===== */
+fieldset {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.75rem 1.5rem;
+  margin-bottom: 1.75rem;
+}
+
+legend {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #16213e;
+  padding: 0 0.5rem;
+}
+
+/* ===== Form Grid (two-column layout) ===== */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem 1.5rem;
+}
+
+.form-grid .full-width {
+  grid-column: 1 / -1;
+}
+
+/* ===== Form Groups ===== */
+.form-group {
+  margin-bottom: 0;
+}
+
+.form-group:last-child {
+  margin-bottom: 0;
+}
+
+.form-group > label:first-child {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.form-group > label small {
+  font-weight: 400;
+  color: #666;
+}
+
+/* ===== Inputs, Select, Textarea ===== */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select,
+textarea {
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="date"]:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #4361ee;
+  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.15);
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* ===== File Input ===== */
+input[type="file"] {
+  font-size: 0.9rem;
+}
+
+/* ===== Radio & Checkbox Groups ===== */
+.radio-group,
+.checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  margin-top: 0.3rem;
+}
+
+.inline-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+/* ===== Submit Button ===== */
+button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 0.9rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: #4361ee;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 0.25rem;
+  transition: background-color 0.2s;
+}
+
+button[type="submit"]:hover {
+  background-color: #3a56d4;
+}
+
+button[type="submit"]:active {
+  background-color: #2f47b3;
+}
+
+.submit-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%) translateY(20px);
+  background: #333;
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 999;
+}
+
+.submit-toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ===== Validation Feedback ===== */
+input:invalid:not(:placeholder-shown),
+select:invalid {
+  border-color: #e63946;
+}
+
+input:valid:not(:placeholder-shown),
+select:valid {
+  border-color: #2a9d8f;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  body {
+    padding: 1rem 0.5rem;
+  }
+
+  .form-container {
+    padding: 1.5rem 1rem;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  fieldset {
+    padding: 1rem 0.75rem;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .radio-group,
+  .checkbox-group {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  button[type="submit"] {
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Course Registration</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+  <p class="small">Made by Duy Thong 24CSE @BAKKAA3K
+  </p>
+</div>
+
+  <div class="form-container">
+    <h1>Simple Online Course Registration</h1>
+    <form id="registration-form" action="#" method="post" enctype="multipart/form-data">
+
+      <!-- Personal Information -->
+      <fieldset>
+        <legend>Personal Information</legend>
+        <div class="form-grid">
+
+          <div class="form-group">
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="example@email.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="0123-456-789"
+                   pattern="[0-9\-\+\s]{7,15}" title="Enter a valid phone number (7–15 digits, may include +, - or spaces)" required>
+          </div>
+
+        </div>
+      </fieldset>
+
+      <!-- Course Details -->
+      <fieldset>
+        <legend>Course Details</legend>
+        <div class="form-grid">
+
+          <div class="form-group">
+            <label for="course">Course Selection</label>
+            <select id="course" name="course" required>
+              <option value="" disabled selected>-- Choose a course --</option>
+              <optgroup label="Web Development">
+                <option value="html-css">HTML &amp; CSS Fundamentals</option>
+                <option value="javascript">JavaScript Essentials</option>
+                <option value="react">React Development</option>
+              </optgroup>
+              <optgroup label="Data Science">
+                <option value="python">Python for Data Science</option>
+                <option value="ml">Machine Learning Basics</option>
+                <option value="data-viz">Data Visualization</option>
+              </optgroup>
+              <optgroup label="Design">
+                <option value="ui-ux">UI/UX Design</option>
+                <option value="graphic">Graphic Design</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="start-date">Preferred Start Date</label>
+            <input type="date" id="start-date" name="start-date" required>
+          </div>
+
+          <div class="form-group full-width">
+            <label>Learning Mode</label>
+            <div class="radio-group">
+              <label class="inline-label">
+                <input type="radio" name="mode" value="online" required> Online
+              </label>
+              <label class="inline-label">
+                <input type="radio" name="mode" value="offline"> Offline
+              </label>
+              <label class="inline-label">
+                <input type="radio" name="mode" value="hybrid"> Hybrid
+              </label>
+            </div>
+          </div>
+
+        </div>
+      </fieldset>
+
+      <!-- Skills & Additional Info -->
+      <fieldset>
+        <legend>Skills &amp; Additional Info</legend>
+        <div class="form-grid">
+
+          <div class="form-group full-width">
+            <label>Existing Skills</label>
+            <div class="checkbox-group">
+              <label class="inline-label">
+                <input type="checkbox" name="skills" value="html-css"> HTML / CSS
+              </label>
+              <label class="inline-label">
+                <input type="checkbox" name="skills" value="javascript"> JavaScript
+              </label>
+              <label class="inline-label">
+                <input type="checkbox" name="skills" value="python"> Python
+              </label>
+              <label class="inline-label">
+                <input type="checkbox" name="skills" value="sql"> SQL
+              </label>
+              <label class="inline-label">
+                <input type="checkbox" name="skills" value="git"> Git / Version Control
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="notes">Additional Notes</label>
+            <textarea id="notes" name="notes" rows="4" placeholder="Any comments or special requests..."></textarea>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="file-upload">Upload File <small>(Resume, certificate, etc.)</small></label>
+            <input type="file" id="file-upload" name="file-upload" accept=".pdf,.doc,.docx,.jpg,.png">
+          </div>
+
+        </div>
+      </fieldset>
+
+      <button type="submit">Submit Registration</button>
+      
+    </form>
+  </div>
+  <div id="submit-toast" class="submit-toast" role="status" aria-live="polite">
+    Registration submitted successfully!
+  </div>
+
+  <script>
+    const registrationForm = document.getElementById("registration-form");
+    const submitToast = document.getElementById("submit-toast");
+    let toastTimer;
+
+    registrationForm.addEventListener("submit", (event) => {
+      if (!registrationForm.checkValidity()) {
+        registrationForm.reportValidity();
+        return;
+      }
+
+      event.preventDefault();
+      submitToast.classList.add("show");
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        submitToast.classList.remove("show");
+      }, 2500);
+    });
+  </script>
+</body>
+</html>
