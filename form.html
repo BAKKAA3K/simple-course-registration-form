@@ -14,7 +14,8 @@
 </div>
 
   <div class="form-container">
-    <h1>Simple Online Course Registration</h1>
+    <h1>Online Course Registration</h1>
+    <h2>Please enter your information below to be able to register for the course</h2>
     <form id="registration-form" action="#" method="post" enctype="multipart/form-data">
 
       <!-- Personal Information -->
@@ -24,12 +25,12 @@
 
           <div class="form-group">
             <label for="fullname">Full Name</label>
-            <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+            <input type="text" id="fullname" name="fullname" placeholder="Trần Văn A" required>
           </div>
 
           <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="example@email.com" required>
+            <input type="email" id="email" name="email" placeholder="tranvana@email.com" required>
           </div>
 
           <div class="form-group">
@@ -41,9 +42,9 @@
         </div>
       </fieldset>
 
-      <!-- Course Details -->
+      <!-- Course Registration -->
       <fieldset>
-        <legend>Course Details</legend>
+        <legend>Course Registration</legend>
         <div class="form-grid">
 
           <div class="form-group">
@@ -51,14 +52,14 @@
             <select id="course" name="course" required>
               <option value="" disabled selected>-- Choose a course --</option>
               <optgroup label="Web Development">
-                <option value="html-css">HTML &amp; CSS Fundamentals</option>
-                <option value="javascript">JavaScript Essentials</option>
-                <option value="react">React Development</option>
+                <option value="html-css">HTML &amp; CSS Basics</option>
+                <option value="javascript">JavaScript Introduction</option>
+                <option value="react">React for Beginners</option>
               </optgroup>
               <optgroup label="Data Science">
                 <option value="python">Python for Data Science</option>
                 <option value="ml">Machine Learning Basics</option>
-                <option value="data-viz">Data Visualization</option>
+                <option value="data-viz">Data Structure and Algorithms</option>
               </optgroup>
               <optgroup label="Design">
                 <option value="ui-ux">UI/UX Design</option>
@@ -96,7 +97,7 @@
         <div class="form-grid">
 
           <div class="form-group full-width">
-            <label>Existing Skills</label>
+            <label>Existing skills you have learned</label>
             <div class="checkbox-group">
               <label class="inline-label">
                 <input type="checkbox" name="skills" value="html-css"> HTML / CSS
@@ -117,12 +118,12 @@
           </div>
 
           <div class="form-group full-width">
-            <label for="notes">Additional Notes</label>
+            <label for="notes">Additional notes / Messages</label>
             <textarea id="notes" name="notes" rows="4" placeholder="Any comments or special requests..."></textarea>
           </div>
 
           <div class="form-group full-width">
-            <label for="file-upload">Upload File <small>(Resume, certificate, etc.)</small></label>
+            <label for="file-upload">Upload your CV</label>
             <input type="file" id="file-upload" name="file-upload" accept=".pdf,.doc,.docx,.jpg,.png">
           </div>
 
