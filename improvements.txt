@@ -1,5 +1,11 @@
-I implemented a two-column grid layout using CSS Grid. In HTML, each fieldset's content is now wrapped in a .form-grid container, and fields that should remain full-width (checkboxes, textarea, file upload, learning mode) receive a .full-width class with grid-column: 1 / -1. In CSS, .form-grid uses grid-template-columns: 1fr 1fr with consistent gap values, creating side-by-side field pairs on desktop — for example, Full Name beside Email, and Course Selection beside Start Date. The container max-width was increased from 680px to 780px to accommodate the wider layout comfortably.
+V1.2
+I implemented a two-column grid layout using CSS Grid. 
 
-Spacing and alignment were refined throughout: fieldset padding increased from 1.5rem to 1.75rem, label bottom margin grew slightly, and input padding was expanded for a more comfortable touch target. The grid's gap property replaces individual margin-bottom on form groups, producing perfectly uniform spacing both horizontally and vertically.
+In HTML, each fieldset's content is now wrapped in a .form-grid container, and fields that should remain full-width (checkboxes, textarea, file upload, learning mode) receive a .full-width class with grid-column: 1 / -1. In CSS, .form-grid uses grid-template-columns: 1fr 1fr with consistent gap values, creating side-by-side field pairs on desktop  
+for example, Full Name beside Email, and Course Selection beside Start Date. The container max-width was increased from 680px to 780px to accommodate the wider layout comfortably.
 
-On mobile (≤600px), the grid collapses to a single column (grid-template-columns: 1fr), maintaining full responsiveness. These changes reduce visual clutter, improve scannability, and make the form feel more professional while using less vertical space on wide screens.
+Spacing and alignment were refined throughout: fieldset padding increased from 1.5rem to 1.75rem, label bottom margin grew slightly, and input padding was expanded for a more comfortable touch target. 
+The grid's gap property replaces individual margin-bottom on form groups, producing perfectly uniform spacing both horizontally and vertically.
+
+On mobile (≤600px), the grid collapses to a single column (grid-template-columns: 1fr), maintaining full responsiveness. 
+These changes reduce visual clutter, improve scannability, and make the form feel more professional while using less vertical space on wide screens.
