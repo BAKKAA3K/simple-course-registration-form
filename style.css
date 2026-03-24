@@ -9,17 +9,22 @@
 
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #d6d6d68a;
+  background-image: url("102304_7995_4.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   color: #333;
   line-height: 1.6;
   padding: 2rem 1rem;
+  min-height: 100vh;
 }
 
 /* ===== Form Container ===== */
 .form-container {
   max-width: 780px;
   margin: 0 auto;
-  background: #ffffff00;
+  background: rgba(255, 255, 255, 0.88);
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   padding: 2.5rem 2.5rem;
